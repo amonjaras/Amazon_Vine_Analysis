@@ -51,7 +51,7 @@ Next, we’ll use PySpark, Pandas, or SQL to determine if there is any bias towa
 
 ### **Deliverable 1: Performing ETL on Amazon Video Games Reviews**
 
-**[Deliverable 1 File](https://github.com/amonjaras/Amazon_Vine_Analysis/blob/main/Results/Amazon_Reviews_ETL.ipynb)**
+✅ **[Deliverable 1 File](https://github.com/amonjaras/Amazon_Vine_Analysis/blob/main/Results/Amazon_Reviews_ETL.ipynb)**
 
 As part of this project, we create a database on AWS RDS with tables in pgAdmin using the schema on **Fig 1**.
 
@@ -79,7 +79,7 @@ With the use of PySpark, we were able to extract the information and export it f
 
 ### **Deliverable 2: Determine Bias of Vine Reviews**
 
-**[Deliverable 2 File](https://github.com/amonjaras/Amazon_Vine_Analysis/blob/main/Results/Vine_Review_Analysis.ipynb)**
+✅ **[Deliverable 2 File](https://github.com/amonjaras/Amazon_Vine_Analysis/blob/main/Results/Vine_Review_Analysis.ipynb)**
 
 **❗️ The following results were obtained by filtering the dataset by `total_votes > 20` and ``(helpful_votes / total_votes) > 50%``**
 
@@ -118,7 +118,7 @@ total_unpaid_five_star_review
 
 - Percentage 5-star review paid = **51.06%**
 
-- Percentage 5-star review unpaid = **38.7**
+- Percentage 5-star review unpaid = **38.7%**
 
 ```
 # Percentage of 5-star paid reviews
@@ -132,7 +132,15 @@ percentage_five_star_unpaid
 
 [:top: Go To Top](#index)
 
-
 ## **Summary**
+
+Based on the results , we can conclude that there is a positive bias for reviews in the Vine program. Where 51.06% of the reviews in the Vine program were 5 star, while the percentage for the non-Vine reviews is only 38.7%
+
+Additionally, if we remove the filters on the dataframe for `total_votes>20` and `(helpful_votes / total_votes) >= 50%` to perform the analysis of percentages for paid vs unpaid 5 star reviews as a whole we have opposite results as shown on **Fig 6**.
+
+> *Fig 6: Reviews as whole*
+
+![d2_summary](https://github.com/amonjaras/Amazon_Vine_Analysis/blob/main/Images/d2_summary.png)
+
 
 [:top: Go To Top](#index)
