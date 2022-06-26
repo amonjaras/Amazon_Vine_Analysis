@@ -51,6 +51,8 @@ Next, we’ll use PySpark, Pandas, or SQL to determine if there is any bias towa
 
 ### **Deliverable 1: Performing ETL on Amazon Video Games Reviews**
 
+**[Deliverable 1 File](https://github.com/amonjaras/Amazon_Vine_Analysis/blob/main/Results/Amazon_Reviews_ETL.ipynb)**
+
 As part of this project, we create a database on AWS RDS with tables in pgAdmin using the schema on **Fig 1**.
 
 > *Fig 1: pgAdmin schema*
@@ -75,11 +77,58 @@ With the use of PySpark, we were able to extract the information and export it f
 
 ![vine_table](https://github.com/amonjaras/Amazon_Vine_Analysis/blob/main/Images/d1_vine_table.png)
 
+### **Deliverable 2: Determine Bias of Vine Reviews**
 
+**[Deliverable 2 File](https://github.com/amonjaras/Amazon_Vine_Analysis/blob/main/Results/Vine_Review_Analysis.ipynb)**
 
+**❗️ The following results were obtained by filtering the dataset by `total_votes > 20` and ``(helpful_votes / total_votes) > 50%``**
 
+**1. How many Vine reviews and non-Vine reviews were there?**
 
+- Total paid review = **94**
 
+- Total unpaid review = **40471**
+
+```
+# Total number of paid reviews
+total_paid_review = paid_df.count()
+total_paid_review
+
+# Total number of unpaid reviews
+total_unpaid_review = unpaid_df.count()
+total_unpaid_review
+```
+**2. How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?**
+
+- Total paid 5-star review = **48**
+
+- Total unpaid 5-star review = **15663**
+
+```
+# Total number of 5-star paid reviews
+total_paid_five_star_review = paid_df.filter(paid_df.star_rating == 5).count()
+total_paid_five_star_review
+
+# Total number of 5-star unpaid reviews
+total_unpaid_five_star_review = unpaid_df.filter(unpaid_df.star_rating == 5).count()
+total_unpaid_five_star_review
+```
+
+**3. What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?**
+
+- Percentage 5-star review paid = **51.06%**
+
+- Percentage 5-star review unpaid = **38.7**
+
+```
+# Percentage of 5-star paid reviews
+percentage_five_star_paid = round((total_paid_five_star_review / total_paid_review) * 100, 2)
+percentage_five_star_paid
+
+# Percentage of 5-star unpaid reviews
+percentage_five_star_unpaid = round((total_unpaid_five_star_review / total_unpaid_review) * 100, 2)
+percentage_five_star_unpaid
+```
 
 [:top: Go To Top](#index)
 
