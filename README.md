@@ -136,7 +136,7 @@ percentage_five_star_unpaid
 
 Based on the results , we can conclude that there is a positive bias for reviews in the Vine program. Where 51.06% of the reviews in the Vine program were 5 star, while the percentage for the non-Vine reviews is only 38.7%
 
-Additionally, if we remove the filters on the dataframe for `total_votes>20` and `(helpful_votes / total_votes) >= 50%` to perform the analysis of percentages for paid vs unpaid 5 star reviews as a whole we have opposite results as shown on **Fig 6**.
+Additionally, if we remove the filters on the dataframe for `total_votes>20` and `(helpful_votes / total_votes) >= 50%` to perform the analysis of percentages for paid vs unpaid 5 star reviews as a whole we have a major difference on the results as shown on **Fig 6**, confirming that reviews made by Vine members are bias.
 
 > *Fig 6: Reviews as whole*
 
